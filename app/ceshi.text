@@ -1,0 +1,8 @@
+<ListPreference
+            android:dialogTitle="选择一个"
+            android:entries="@array/auto_update_frequency_entry"
+            android:entryValues="@array/auto_update_frequency_value"
+            android:key="list_pre"
+            android:summary="An example that uses an edit text dialog"
+            android:title="Edit text preference" >
+        </ListPreference>

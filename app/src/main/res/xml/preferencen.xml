@@ -1,0 +1,75 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="FramentPreference">
+    <PreferenceCategory
+        android:title="In-line preferences"
+        android:key="pref_key_storage_settings">
+        <CheckBoxPreference
+            android:key="pref_key_auto_delete"
+            android:summary="This is checkbox"
+            android:title="Checkbox preference"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Dialog-base preferences"
+        android:key="pref_key_storage_settings">
+
+        <EditTextPreference android:key="edit"
+            android:title="Edit text preference"
+            android:summary="An example that uses an edit text dialog"
+            android:dialogTitle="Enter your favorite animal" />
+
+        <ListPreference
+            android:dialogTitle="Choose one"
+            android:entries="@array/auto_update_frequency_entry"
+            android:entryValues="@array/auto_update_frequency_value"
+            android:key="list_pre"
+            android:summary="An example that uses a list dialog"
+            android:title="List preference" >
+        </ListPreference>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Launch preferences"
+        android:key="pref_sms_storage_title">
+        <PreferenceScreen
+            android:key="button_voicemail_setting_key"
+            android:summary="shows another screen of preferences"
+            android:title="Screen preference"
+            android:persistent="false"
+            >
+            <CheckBoxPreference
+                android:key="pref_key_auto_delete"
+                android:summary="Preference thst is on the next screen but same hierarchy"
+                android:title="Toggle preference"
+                android:defaultValue="false" />
+        </PreferenceScreen>
+
+        <Preference
+            android:key="pref_key_auto_delete"
+            android:summary="Launches an A"
+            android:title="Intent preference"
+            android:defaultValue="false" />
+        <Preference android:summary="Launches an A"
+            android:title="Intent preference">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="http://www.example.com" />
+        </Preference>
+
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Preference attributes"
+        android:key="pref_key_storage_settings">
+        <CheckBoxPreference
+            android:key="Parent check preference"
+            android:summary="This is checkbox"
+            android:title="Parent check preference"
+            android:defaultValue="false" />
+        <CheckBoxPreference
+            android:key="pref_key_auto_delete"
+            android:dependency="Parent check preference"
+            android:summary="This is visuslly a child"
+            android:title="Child check preference"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+    ...
+</PreferenceScreen>
